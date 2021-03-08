@@ -1,6 +1,3 @@
-
-/* Respond with successful resource creation, CORS enabled
-*/
 let arc = require('@architect/functions')
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 
@@ -17,8 +14,6 @@ async function http(req) {
 
     // End the call with <Hangup>
     twiml.hangup();
-    // response.type('text/xml');
-    // response.send(twiml.toString());
     return {
         statusCode: 200,
         xml: twiml.toString(),
